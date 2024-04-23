@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 60vh;
+            width: 60vw;
+            background-color: rgb(170, 170, 170);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+        }
+        input::file-selector-button{
+            background-color: rgb(255, 255, 255);
+            color: rgb(105, 98, 98);
+            border: none;
+            border-radius: 10px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            color: rgb(110, 53, 53);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #error{
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <form action="/send" method="post" enctype="multipart/form-data">
+                <p id="error"></p>
+                <input type="text" name="name" id="name" placeholder="Enter your name" >
+                <input type="email" name="email" id="email" placeholder="Enter your email" >
+                <input type="password" name="password" id="password" placeholder="Enter your password" >
+                <input type="file" name="avatar" id="file" multiple placeholder="Upload your file" >
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>
